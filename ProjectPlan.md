@@ -21,15 +21,12 @@ We are using two distinct datasets sourced from the NBA-dataset-stats repository
 
 **Integration:** These datasets will be integrated via a multi-key join on `TEAM_ID` and `SEASON`.
 
-## Kaggle Clause
-No Kaggle datasets are used in this project. All data is sourced from historical archives that reflect real-world data collection from the official NBA API. This avoids the "analysis-ready" nature of Kaggle and requires us to handle raw data cleaning and join logic manually.
-
 ## Timeline
 | Task | Description | Deadline | Responsibility |
 | :--- | :--- | :--- | :--- |
-| **Data Setup** | Verify CSV integrity via SHA-256 and setup repo structure. | Week 9-10| Team |
-| **Data Join** | Merge Traditional and Advanced datasets on Team ID and Season. | Week 10-12 | Ahmed |
-| **EDA** | Identify correlations and visualize statistical distributions. | Week 12-13 | Will |
+| **Data Setup** | Verify CSV integrity via SHA-256 and setup repo structure. | Week 10-12| Team |
+| **Data Join** | Merge Traditional and Advanced datasets on Team ID and Season. | Week 13-15 | Ahmed |
+| **EDA** | Identify correlations and visualize statistical distributions. | Week 13-15 | Will |
 | **Modeling** | Train and test the Random Forest Regressor. | Before deadline? | Team |
 
 ## Constraints
