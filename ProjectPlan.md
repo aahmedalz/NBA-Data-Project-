@@ -38,3 +38,4 @@ No Kaggle datasets are used in this project. All data is sourced from historical
 
 ## Gaps
 * We need to determine if we should exclude "lockout" shortened seasons (like 2011-12 and the 2020 bubble) to keep the win totals consistent.
+* We need to determine how we will handle rule changes and pace of play changes which have affected the league in the last 30 years.
