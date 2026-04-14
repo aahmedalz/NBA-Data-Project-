@@ -9,7 +9,7 @@ Once the datasets are merged we will begin this process. Our analysis will inclu
 The modeling phase will involve training a Random Forest Regressor to predict team win percentage. 
 
 # Updated Timeline
-XXXXX
+Overall, the project is on schedule. There are no delays so far so the timeline will remain consistent with our original project plan. 
 # Changes to Project Plan
 XXXXX
 # Challenges So Far
