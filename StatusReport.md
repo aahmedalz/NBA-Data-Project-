@@ -11,7 +11,10 @@ The modeling phase will involve training a Random Forest Regressor to predict te
 # Updated Timeline
 Overall, the project is on schedule. There are no delays so far so the timeline will remain consistent with our original project plan. 
 # Changes to Project Plan
-XXXXX
+#### Data Handling
+We are considering excluding seasons that were cut short due to lockouts such as 2011-12 and 2019-20 to maintain consistency in our calculations. We may also normalize win totals into win percentages to mitigate these concerns. 
+#### Feature Engineering
+We are anticipating the need to standardize or normalize the features, especially when considering that metrics across eras are from different styles of play. We could possibly include pace-adjusted statistics to account for these changes in gameplay over time. 
 # Challenges So Far
 XXXXX
 # Member Contributions
