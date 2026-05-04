@@ -1,0 +1,263 @@
+NBA Performance & Efficiency Analysis — Data Dictionary
+=======================================================
+Last updated: 2026-05-04
+Authors: Ahmed AL-Zamzami, William McKinnon
+
+This file describes all columns present in the datasets used in this project.
+
+=======================================================
+SECTION 1: SHARED COLUMNS (present in both datasets)
+=======================================================
+
+TEAM_ID
+  Type: integer
+  Description: Unique numeric identifier for each NBA franchise assigned by the NBA.
+  Example: 1610612737 (Atlanta Hawks)
+
+TEAM_NAME
+  Type: string
+  Description: Full name of the NBA franchise.
+  Example: "Atlanta Hawks"
+
+GP
+  Type: integer
+  Description: Number of games played in the season.
+  Range: 50–82 (lower values indicate shortened seasons)
+
+W
+  Type: integer
+  Description: Number of wins in the season.
+  Range: 7–73
+
+L
+  Type: integer
+  Description: Number of losses in the season.
+  Range: 9–75
+
+W_PCT
+  Type: float
+  Description: Win percentage. Calculated as W / GP. This is the target variable for all predictive models.
+  Range: 0.085–0.890
+
+MIN
+  Type: float
+  Description: Total team minutes played across all games in the season.
+
+SEASON
+  Type: string
+  Description: NBA season identifier in YYYY-YY format.
+  Example: "1996-97", "2022-23"
+  Range: 1996-97 through 2022-23
+
+=======================================================
+SECTION 2: TRADITIONAL STATS (team_stats_traditional_rs.csv)
+=======================================================
+
+FGM
+  Type: float
+  Description: Total field goals made by the team during the season.
+
+FGA
+  Type: float
+  Description: Total field goal attempts by the team during the season.
+
+FG_PCT
+  Type: float
+  Description: Field goal percentage. Calculated as FGM / FGA.
+  Range: 0.0–1.0
+
+FG3M
+  Type: float
+  Description: Total three-point field goals made.
+
+FG3A
+  Type: float
+  Description: Total three-point field goal attempts.
+
+FG3_PCT
+  Type: float
+  Description: Three-point field goal percentage. Calculated as FG3M / FG3A.
+  Range: 0.0–1.0
+
+FTM
+  Type: float
+  Description: Total free throws made.
+
+FTA
+  Type: float
+  Description: Total free throw attempts.
+
+FT_PCT
+  Type: float
+  Description: Free throw percentage. Calculated as FTM / FTA.
+  Range: 0.0–1.0
+
+OREB
+  Type: float
+  Description: Total offensive rebounds.
+
+DREB
+  Type: float
+  Description: Total defensive rebounds.
+
+REB
+  Type: float
+  Description: Total rebounds (offensive + defensive).
+
+AST
+  Type: float
+  Description: Total assists.
+
+TOV
+  Type: float
+  Description: Total turnovers committed by the team.
+
+STL
+  Type: float
+  Description: Total steals.
+
+BLK
+  Type: float
+  Description: Total blocks.
+
+BLKA
+  Type: float
+  Description: Total shots blocked against the team (blocked by opponents).
+
+PF
+  Type: float
+  Description: Total personal fouls committed.
+
+PFD
+  Type: float
+  Description: Total personal fouls drawn (fouled by opponents).
+
+PTS
+  Type: float
+  Description: Total points scored during the season.
+
+PLUS_MINUS
+  Type: float
+  Description: Team point differential across all games (points scored minus points allowed).
+
+=======================================================
+SECTION 3: ADVANCED STATS (team_stats_advanced_rs.csv)
+=======================================================
+
+E_OFF_RATING
+  Type: float
+  Description: Estimated offensive rating. Points scored per 100 possessions (smoothed estimate).
+
+OFF_RATING
+  Type: float
+  Description: Offensive rating. Points scored per 100 possessions (actual).
+  Higher values indicate more efficient offenses.
+
+E_DEF_RATING
+  Type: float
+  Description: Estimated defensive rating (smoothed estimate).
+
+DEF_RATING
+  Type: float
+  Description: Defensive rating. Points allowed per 100 possessions (actual).
+  Lower values indicate better defenses.
+
+E_NET_RATING
+  Type: float
+  Description: Estimated net rating (smoothed estimate).
+
+NET_RATING
+  Type: float
+  Description: Net rating. OFF_RATING minus DEF_RATING. Overall team efficiency margin per 100 possessions.
+  Strongest single predictor of W_PCT in this project (r ≈ 0.95).
+
+AST_PCT
+  Type: float
+  Description: Assist percentage. Percentage of made field goals that were assisted.
+  Range: 0.0–1.0
+
+AST_TO
+  Type: float
+  Description: Assist-to-turnover ratio.
+
+AST_RATIO
+  Type: float
+  Description: Assists per 100 possessions.
+
+OREB_PCT
+  Type: float
+  Description: Offensive rebound percentage. Percentage of available offensive rebounds grabbed.
+  Range: 0.0–1.0
+
+DREB_PCT
+  Type: float
+  Description: Defensive rebound percentage. Percentage of available defensive rebounds grabbed.
+  Range: 0.0–1.0
+
+REB_PCT
+  Type: float
+  Description: Total rebound percentage.
+  Range: 0.0–1.0
+
+TM_TOV_PCT
+  Type: float
+  Description: Team turnover percentage. Turnovers per 100 plays.
+
+EFG_PCT
+  Type: float
+  Description: Effective field goal percentage. Adjusts FG_PCT to account for three-pointers being worth more.
+  Formula: (FGM + 0.5 * FG3M) / FGA
+
+TS_PCT
+  Type: float
+  Description: True shooting percentage. Measures shooting efficiency accounting for 2-pointers, 3-pointers, and free throws.
+  Formula: PTS / (2 * (FGA + 0.44 * FTA))
+
+E_PACE
+  Type: float
+  Description: Estimated pace (smoothed).
+
+PACE
+  Type: float
+  Description: Pace. Estimated number of possessions per 48 minutes.
+  Higher values indicate faster-paced teams.
+
+PACE_PER40
+  Type: float
+  Description: Pace normalized per 40 minutes.
+
+POSS
+  Type: integer
+  Description: Estimated total possessions during the season.
+
+PIE
+  Type: float
+  Description: Player Impact Estimate at the team level. Measures team's share of game events.
+  Range: 0.0–1.0
+
+=======================================================
+SECTION 4: DERIVED COLUMNS (data/processed/nba_clean.csv only)
+=======================================================
+
+SHORTENED_SEASON
+  Type: integer (binary flag)
+  Description: Equals 1 if the season had fewer than 82 scheduled games due to lockout or COVID-19.
+  Affected seasons: 1998-99, 2011-12, 2019-20, 2020-21
+  Values: 0 = full season, 1 = shortened season
+
+FGM_PG, FGA_PG, FG3M_PG, FG3A_PG, FTM_PG, FTA_PG,
+OREB_PG, DREB_PG, REB_PG, AST_PG, TOV_PG, STL_PG, BLK_PG, PTS_PG
+  Type: float
+  Description: Per-game versions of the corresponding counting stats, calculated as the total divided by GP.
+  Purpose: Enables fair cross-season comparisons by normalizing for shortened seasons.
+  Example: PTS_PG = PTS / GP
+
+=======================================================
+SECTION 5: RANK COLUMNS (dropped before analysis)
+=======================================================
+
+All columns ending in _RANK (e.g., W_RANK, PTS_RANK, OFF_RATING_RANK)
+  Type: integer
+  Description: League rank of the team for that statistic in that season (1 = best).
+  Note: These columns were dropped before integration and analysis to avoid redundancy
+  with the underlying stat values.
