@@ -1,0 +1,63 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "name": "NBA Performance & Efficiency Analysis",
+  "description": "An integrated dataset combining traditional box-score statistics and advanced efficiency metrics for all NBA teams across 27 seasons (1996-97 through 2022-23), used to predict team win percentage and compare the predictive power of traditional vs. advanced metrics.",
+  "url": "https://github.com/aahmedalz/NBA-Data-Project-",
+  "version": "1.0",
+  "datePublished": "2026-05-04",
+  "license": "https://opensource.org/licenses/MIT",
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Ahmed AL-Zamzami"
+    },
+    {
+      "@type": "Person",
+      "name": "William McKinnon"
+    }
+  ],
+  "keywords": [
+    "NBA",
+    "basketball",
+    "sports analytics",
+    "machine learning",
+    "random forest",
+    "win prediction",
+    "advanced statistics",
+    "data curation"
+  ],
+  "temporalCoverage": "1996/2023",
+  "spatialCoverage": "United States",
+  "variableMeasured": [
+    "Win Percentage (W_PCT)",
+    "Offensive Rating (OFF_RATING)",
+    "Defensive Rating (DEF_RATING)",
+    "Net Rating (NET_RATING)",
+    "True Shooting Percentage (TS_PCT)",
+    "Pace (PACE)",
+    "Points Per Game (PTS_PG)",
+    "Field Goal Percentage (FG_PCT)"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://github.com/aahmedalz/NBA-Data-Project-/blob/main/data/raw/team_stats_traditional_rs.csv",
+      "name": "Traditional Team Stats"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://github.com/aahmedalz/NBA-Data-Project-/blob/main/data/raw/team_stats_advanced_rs.csv",
+      "name": "Advanced Team Stats"
+    }
+  ],
+  "isBasedOn": {
+    "@type": "Dataset",
+    "name": "NBA Dataset Stats",
+    "url": "https://github.com/datasets/nba-dataset-stats"
+  },
+  "measurementTechnique": "Random Forest Regression, Pearson Correlation Analysis",
+  "numberOfObservations": 802
+}
