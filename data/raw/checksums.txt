@@ -1,0 +1,2 @@
+e38edacb612b5ffcdfe8a28e913087d0baee039785072ed7dfae1f6f34c8e361  data/raw/team_stats_traditional_rs.csv
+67a9824d50afc112e6d01463a77845d5e5f1211687f602adb4972a0ab91c5b7e  data/raw/team_stats_advanced_rs.csv

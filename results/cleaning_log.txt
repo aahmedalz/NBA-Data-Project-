@@ -1,0 +1,5 @@
+Original shape: (802, 49)
+Shortened seasons flagged: ['1998-99', '2011-12', '2019-20', '2020-21']
+Created per-game columns for: ['FGM', 'FGA', 'FG3M', 'FG3A', 'FTM', 'FTA', 'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'PTS']
+Removed 0 rows with GP < 50 (none expected)
+Final shape: (802, 64)

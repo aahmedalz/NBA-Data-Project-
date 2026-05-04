@@ -1,0 +1,28 @@
+=== Traditional Stats Model ===
+R²:   0.4810
+RMSE: 0.1115
+
+=== Advanced Stats Model ===
+R²:   0.9336
+RMSE: 0.0399
+
+=== Top Advanced Correlations with W_PCT ===
+DEF_RATING   -0.487410
+TM_TOV_PCT   -0.273451
+PACE         -0.077668
+AST_PCT       0.214288
+EFG_PCT       0.454330
+TS_PCT        0.496902
+OFF_RATING    0.531208
+PIE           0.946942
+NET_RATING    0.968041
+
+=== Top Traditional Correlations with W_PCT ===
+TOV_PG    -0.180928
+STL_PG     0.064590
+REB_PG     0.076060
+PTS_PG     0.141713
+BLK_PG     0.164967
+AST_PG     0.196653
+FG3_PCT    0.460278
+FG_PCT     0.564956

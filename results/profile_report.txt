@@ -1,0 +1,156 @@
+==================================================
+Traditional Dataset
+==================================================
+Shape: (802, 55)
+Seasons: ['1996-97', '1997-98', '1998-99', '1999-00', '2000-01', '2001-02', '2002-03', '2003-04', '2004-05', '2005-06', '2006-07', '2007-08', '2008-09', '2009-10', '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23']
+
+Missing values:
+Series([], dtype: int64)
+
+Duplicate rows: 0
+
+Dtypes:
+TEAM_ID              int64
+TEAM_NAME              str
+GP                   int64
+W                    int64
+L                    int64
+W_PCT              float64
+MIN                float64
+FGM                float64
+FGA                float64
+FG_PCT             float64
+FG3M               float64
+FG3A               float64
+FG3_PCT            float64
+FTM                float64
+FTA                float64
+FT_PCT             float64
+OREB               float64
+DREB               float64
+REB                float64
+AST                float64
+TOV                float64
+STL                float64
+BLK                float64
+BLKA               float64
+PF                 float64
+PFD                float64
+PTS                float64
+PLUS_MINUS         float64
+GP_RANK              int64
+W_RANK               int64
+L_RANK               int64
+W_PCT_RANK           int64
+MIN_RANK             int64
+FGM_RANK             int64
+FGA_RANK             int64
+FG_PCT_RANK          int64
+FG3M_RANK            int64
+FG3A_RANK            int64
+FG3_PCT_RANK         int64
+FTM_RANK             int64
+FTA_RANK             int64
+FT_PCT_RANK          int64
+OREB_RANK            int64
+DREB_RANK            int64
+REB_RANK             int64
+AST_RANK             int64
+TOV_RANK             int64
+STL_RANK             int64
+BLK_RANK             int64
+BLKA_RANK            int64
+PF_RANK              int64
+PFD_RANK             int64
+PTS_RANK             int64
+PLUS_MINUS_RANK      int64
+SEASON                 str
+dtype: object
+
+Basic stats (numeric):
+            TEAM_ID  ...  PLUS_MINUS_RANK
+count  8.020000e+02  ...           802.00
+mean   1.610613e+09  ...            15.35
+std    8.620000e+00  ...             8.58
+min    1.610613e+09  ...             1.00
+25%    1.610613e+09  ...             8.00
+50%    1.610613e+09  ...            15.00
+75%    1.610613e+09  ...            23.00
+max    1.610613e+09  ...            30.00
+
+[8 rows x 53 columns]
+
+==================================================
+Advanced Dataset
+==================================================
+Shape: (802, 47)
+Seasons: ['1996-97', '1997-98', '1998-99', '1999-00', '2000-01', '2001-02', '2002-03', '2003-04', '2004-05', '2005-06', '2006-07', '2007-08', '2008-09', '2009-10', '2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23']
+
+Missing values:
+Series([], dtype: int64)
+
+Duplicate rows: 0
+
+Dtypes:
+TEAM_ID              int64
+TEAM_NAME              str
+GP                   int64
+W                    int64
+L                    int64
+W_PCT              float64
+MIN                float64
+E_OFF_RATING       float64
+OFF_RATING         float64
+E_DEF_RATING       float64
+DEF_RATING         float64
+E_NET_RATING       float64
+NET_RATING         float64
+AST_PCT            float64
+AST_TO             float64
+AST_RATIO          float64
+OREB_PCT           float64
+DREB_PCT           float64
+REB_PCT            float64
+TM_TOV_PCT         float64
+EFG_PCT            float64
+TS_PCT             float64
+E_PACE             float64
+PACE               float64
+PACE_PER40         float64
+POSS                 int64
+PIE                float64
+GP_RANK              int64
+W_RANK               int64
+L_RANK               int64
+W_PCT_RANK           int64
+MIN_RANK             int64
+OFF_RATING_RANK      int64
+DEF_RATING_RANK      int64
+NET_RATING_RANK      int64
+AST_PCT_RANK         int64
+AST_TO_RANK          int64
+AST_RATIO_RANK       int64
+OREB_PCT_RANK        int64
+DREB_PCT_RANK        int64
+REB_PCT_RANK         int64
+TM_TOV_PCT_RANK      int64
+EFG_PCT_RANK         int64
+TS_PCT_RANK          int64
+PACE_RANK            int64
+PIE_RANK             int64
+SEASON                 str
+dtype: object
+
+Basic stats (numeric):
+            TEAM_ID      GP  ...  PACE_RANK  PIE_RANK
+count  8.020000e+02  802.00  ...     802.00    802.00
+mean   1.610613e+09   79.44  ...      15.35     15.36
+std    8.620000e+00    7.01  ...       8.58      8.58
+min    1.610613e+09   50.00  ...       1.00      1.00
+25%    1.610613e+09   82.00  ...       8.00      8.00
+50%    1.610613e+09   82.00  ...      15.00     15.00
+75%    1.610613e+09   82.00  ...      23.00     23.00
+max    1.610613e+09   82.00  ...      30.00     30.00
+
+[8 rows x 45 columns]
+
