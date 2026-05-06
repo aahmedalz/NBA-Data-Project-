@@ -6,7 +6,7 @@
 
 ## Summary
 
-This project investigates whether advanced efficiency metrics or traditional box-score statistics are better predictors of NBA team win percentage (W_PCT) across 27 seasons (1996–2023). The motivation stems from the growing influence of analytics in professional basketball, where teams have increasingly shifted away from raw counting stats toward efficiency-based metrics, but the degree to which this shift is justified from a predictive standpoint is worth quantifying rigorously.
+This project investigates whether advanced efficiency metrics or traditional box-score statistics are better predictors of NBA team win percentage (W_PCT) across 27 seasons (1996–2023). The growing use of analytics within professional basketball has led teams to increasingly rely on efficiency measurements vs. raw counting stats, thus it should be quantified to see if the shift has been justified from a predictive perspective.
 
 We collected two complementary datasets from a public NBA statistics repository: one containing traditional per-season team statistics (points, rebounds, assists, turnovers) and one containing advanced efficiency metrics (offensive rating, defensive rating, net rating, true shooting percentage, pace). Both datasets span 802 team-season records across 30 NBA teams from 1996-97 through 2022-23. We integrated these datasets via a multi-key join on TEAM_ID and SEASON, profiled and cleaned the merged data, and trained two separate Random Forest regression models,one using only traditional features and one using only advanced features, to predict each team's end-of-season win percentage.
 
