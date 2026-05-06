@@ -6,11 +6,11 @@
 
 ## Summary
 
-This project investigates whether advanced efficiency metrics or traditional box-score statistics are better predictors of NBA team win percentage (W_PCT) across 27 seasons (1996–2023). The motivation stems from the growing influence of analytics in professional basketball — teams have increasingly shifted away from raw counting stats toward efficiency-based metrics, but the degree to which this shift is justified from a predictive standpoint is worth quantifying rigorously.
+This project investigates whether advanced efficiency metrics or traditional box-score statistics are better predictors of NBA team win percentage (W_PCT) across 27 seasons (1996–2023). The motivation stems from the growing influence of analytics in professional basketball, where teams have increasingly shifted away from raw counting stats toward efficiency-based metrics, but the degree to which this shift is justified from a predictive standpoint is worth quantifying rigorously.
 
-We collected two complementary datasets from a public NBA statistics repository: one containing traditional per-season team statistics (points, rebounds, assists, turnovers) and one containing advanced efficiency metrics (offensive rating, defensive rating, net rating, true shooting percentage, pace). Both datasets span 802 team-season records across 30 NBA teams from 1996-97 through 2022-23. We integrated these datasets via a multi-key join on TEAM_ID and SEASON, profiled and cleaned the merged data, and trained two separate Random Forest regression models — one using only traditional features and one using only advanced features — to predict each team's end-of-season win percentage.
+We collected two complementary datasets from a public NBA statistics repository: one containing traditional per-season team statistics (points, rebounds, assists, turnovers) and one containing advanced efficiency metrics (offensive rating, defensive rating, net rating, true shooting percentage, pace). Both datasets span 802 team-season records across 30 NBA teams from 1996-97 through 2022-23. We integrated these datasets via a multi-key join on TEAM_ID and SEASON, profiled and cleaned the merged data, and trained two separate Random Forest regression models,one using only traditional features and one using only advanced features, to predict each team's end-of-season win percentage.
 
-Our findings are conclusive. The advanced stats model achieved an R² of 0.9336 and RMSE of 0.0399, explaining 93.36% of the variance in team win percentage. By contrast, the traditional stats model achieved R² of only 0.481 and RMSE of 0.1115 — less than half the explanatory power. Among advanced metrics, NET_RATING, OFF_RATING, and DEF_RATING showed the highest individual correlations with W_PCT. Among traditional metrics, field goal percentage and turnover rate were the strongest predictors, though still far weaker than efficiency ratings. These results confirm that efficiency-based metrics are substantially more predictive of team success than raw volume statistics, providing quantitative support for the analytics movement in professional basketball.
+Our findings are conclusive. The advanced stats model achieved an R² of 0.9336 and RMSE of 0.0399, explaining 93.36% of the variance in team win percentage. By contrast, the traditional stats model achieved R² of only 0.481 and RMSE of 0.1115, which is less than half the explanatory power. Among advanced metrics, NET_RATING, OFF_RATING, and DEF_RATING showed the highest individual correlations with W_PCT. Among traditional metrics, field goal percentage and turnover rate were the strongest predictors, though still far weaker than efficiency ratings. These results confirm that efficiency-based metrics are substantially more predictive of team success than raw volume statistics, providing quantitative support for the analytics movement in professional basketball.
 
 ## Data Profile
 
@@ -55,7 +55,7 @@ Cleaning was performed in `scripts/clean.py` with a log saved to `results/cleani
 
 **1. Shortened season flagging:** A binary column SHORTENED_SEASON was added, set to 1 for the four shortened seasons (1998-99, 2011-12, 2019-20, 2020-21). These seasons were retained because W_PCT remains valid regardless of season length. The flag allows analyses to control for this factor.
 
-**2. Per-game normalization:** Fourteen counting stat columns were divided by GP to produce per-game equivalents (PTS_PG, REB_PG, AST_PG, etc.). This addresses the shortened season comparability problem — a team's total points in a 66-game season is not directly comparable to one in an 82-game season, but per-game averages are. The traditional stats model uses these normalized columns.
+**2. Per-game normalization:** Fourteen counting stat columns were divided by GP to produce per-game equivalents (PTS_PG, REB_PG, AST_PG, etc.). This addresses the shortened season comparability problem, that a team's total points in a 66-game season is not directly comparable to one in an 82-game season, but per-game averages are. The traditional stats model uses these normalized columns.
 
 **3. Outlier validation:** A check confirmed no records had GP < 50, validating dataset integrity.
 
@@ -80,13 +80,13 @@ Visualizations are saved in `results/figures/`: correlation bar charts, feature 
 
 This project confirmed with high confidence that advanced efficiency metrics are superior predictors of NBA team success. Several extensions are worth pursuing.
 
-Incorporating player-level data would enable roster-based predictions — teams could be modeled by aggregating individual player efficiency metrics, potentially improving predictions for teams undergoing mid-season roster changes.
+Incorporating player-level data would enable roster-based predictions, so teams could be modeled by aggregating individual player efficiency metrics, potentially improving predictions for teams undergoing mid-season roster changes.
 
 A temporal analysis would reveal how predictive relationships have evolved across eras. The NBA has shifted dramatically toward three-point shooting since 2015. Era-specific models could test whether the same metrics remain equally predictive across different epochs.
 
 The current models treat each team-season as an independent observation. A time-series approach accounting for franchise continuity could capture dynasty effects that persist across seasons.
 
-A key lesson learned was the importance of per-game normalization. Raw volume statistics are not directly comparable across seasons of different lengths — this is a subtle but consequential data quality issue that any multi-season sports analysis must address explicitly.
+A key lesson learned was the importance of per-game normalization. Raw volume statistics are not directly comparable across seasons of different lengths. This is a subtle but consequential data quality issue that any multi-season sports analysis must address explicitly.
 
 ## Challenges
 
