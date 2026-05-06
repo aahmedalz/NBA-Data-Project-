@@ -86,7 +86,7 @@ A temporal analysis would reveal how predictive relationships have evolved acros
 
 The current models treat each team-season as an independent observation. A time-series approach accounting for franchise continuity could capture dynasty effects that persist across seasons.
 
-A key lesson learned was the importance of per-game normalization. Raw volume statistics are not directly comparable across seasons of different lengths. This is a subtle but consequential data quality issue that any multi-season sports analysis must address explicitly.
+One of the primary findings of this research was how to standardize a team's performance metrics in accordance to games played to assure that standard volume statistics will be used when comparing performance metrics across multiple seasons in the same era. The significance of this quality problem is easily overlooked, but it can play an important role in how to interpret performance metrics across multiple seasons of play.
 
 ## Challenges
 
